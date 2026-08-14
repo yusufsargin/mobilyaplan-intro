@@ -1,0 +1,129 @@
+---
+export interface Props {
+  lang?: 'tr' | 'en';
+}
+
+const { lang = 'tr' } = Astro.props;
+const isTr = lang === 'tr';
+const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+
+const t = {
+  badge: isTr ? '✨ Yeni Nesil 3D Mobilya Çizim Aracı' : '✨ Next-Gen 3D Furniture Design Tool',
+  h1Line1: isTr ? 'Yeni Nesil Mobilya Çizim Programı' : 'FurnitureDraw • Next-Gen 3D Furniture Design Tool',
+  h1Line2: isTr ? 'Herkes İçin Kolay, Hızlı ve Profesyonel 3D Tasarım' : 'Fast, Easy & Professional CAD for Everyone',
+  subtitle: isTr
+    ? 'Karmaşık teknik bilgi gerektirmez! Marangozlardan iç mimarlara, atölyelerden bireysel kullanıcılara kadar herkesin 10 dakikada öğrenip profesyonelce mobilya tasarlayabileceği bulut tabanlı çizim platformu.'
+    : 'No complex CAD training required. From carpenters to interior designers, custom woodshops to DIY home creators — anyone can master and design bespoke cabinetry in just 10 minutes.',
+  cta: isTr ? 'Hemen Ücretsiz Başla' : 'Start Free Trial',
+  trustNote: isTr ? '3 Gün Sınırsız Ücretsiz Deneme • Kredi Kartı Gerekmez • Sıfır Kurulum' : '3-Day Unlimited Free Trial • No Credit Card Required • Zero Installation',
+  videoTitle: isTr ? 'MobilyaPlan • 2 Dakikada Tanıtım & Hızlı Başlangıç' : 'FurnitureDraw • Quick Start & 2-Minute Demo',
+  aud1: isTr ? 'Marangoz & Atölyeler' : 'Carpenters & Workshops',
+  aud1Desc: isTr ? 'Ölçü gir, anında parça listesi ve fire tasarrufu al' : 'Input dimensions, get instant cutting lists and scrap savings',
+  aud2: isTr ? 'İç Mimarlar & Tasarımcılar' : 'Interior Designers & Architects',
+  aud2Desc: isTr ? 'Müşteriye saniyeler içinde 3D model ve render sun' : 'Present 3D models and photorealistic renders in seconds',
+  aud3: isTr ? 'Bireysel Kullanıcılar' : 'DIY & Home Creators',
+  aud3Desc: isTr ? 'Kendi evinin mobilyasını 10 dakikada kolayca çiz' : 'Design your own custom home furniture easily in 10 minutes'
+};
+---
+
+<header class="relative pt-32 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-black text-white border-b border-zinc-900">
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-zinc-800/20 rounded-full blur-[160px] pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+    <!-- Status Badge -->
+    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-mono font-bold tracking-wide shadow-sm mb-6">
+      <span class="flex h-2 w-2 relative">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+      </span>
+      <span>{t.badge}</span>
+    </div>
+
+    <!-- H1 Headline -->
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] max-w-4xl mx-auto">
+      <span>{t.h1Line1}</span> <br />
+      <span class="text-zinc-400 font-extrabold">{t.h1Line2}</span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="mt-5 text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed font-normal">
+      {t.subtitle}
+    </p>
+
+    <!-- Single CTA -->
+    <div class="mt-8 flex flex-col items-center justify-center gap-3">
+      <a
+        href={brandUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full sm:w-auto px-10 py-4.5 rounded-2xl bg-white hover:bg-zinc-200 text-black font-black text-base shadow-2xl transition-all duration-200 flex items-center justify-center gap-3 group cursor-pointer"
+      >
+        <span>{t.cta}</span>
+        <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
+      </a>
+
+      <p class="text-xs text-zinc-400 font-mono flex items-center gap-2 mt-1">
+        <i class="fa-solid fa-circle-check text-zinc-300 text-[11px]"></i>
+        <span>{t.trustNote}</span>
+      </p>
+    </div>
+
+    <!-- Central YouTube Video Mockup Frame -->
+    <div class="mt-12 lg:mt-14 max-w-4xl mx-auto">
+      <div class="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+        
+        <div class="flex items-center justify-between px-5 py-3.5 bg-black border-b border-zinc-900 text-xs font-mono">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-zinc-700"></span>
+            <span class="w-3 h-3 rounded-full bg-zinc-700"></span>
+            <span class="w-3 h-3 rounded-full bg-zinc-700"></span>
+            <span class="ml-2 font-bold text-zinc-300 hidden sm:inline-block">
+              {t.videoTitle}
+            </span>
+          </div>
+          <div class="flex items-center gap-2 text-zinc-400">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            <span class="font-bold text-white text-[11px]">HD 1080p</span>
+          </div>
+        </div>
+
+        <div class="relative aspect-video w-full bg-black">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/vz0uWi_WWpY?rel=0&modestbranding=1"
+            title="MobilyaPlan Tanıtım Videosu"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="p-4 sm:p-5 bg-zinc-950 border-t border-zinc-900 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+          <div class="p-3.5 rounded-xl bg-black border border-zinc-800/80 space-y-1">
+            <div class="flex items-center gap-2 text-xs font-bold text-white">
+              <i class="fa-solid fa-hammer text-zinc-300"></i>
+              <span>{t.aud1}</span>
+            </div>
+            <p class="text-[11px] text-zinc-400 leading-snug">{t.aud1Desc}</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-black border border-zinc-800/80 space-y-1">
+            <div class="flex items-center gap-2 text-xs font-bold text-white">
+              <i class="fa-solid fa-compass-drafting text-zinc-300"></i>
+              <span>{t.aud2}</span>
+            </div>
+            <p class="text-[11px] text-zinc-400 leading-snug">{t.aud2Desc}</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-black border border-zinc-800/80 space-y-1">
+            <div class="flex items-center gap-2 text-xs font-bold text-white">
+              <i class="fa-solid fa-user-gear text-zinc-300"></i>
+              <span>{t.aud3}</span>
+            </div>
+            <p class="text-[11px] text-zinc-400 leading-snug">{t.aud3Desc}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>

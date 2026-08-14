@@ -1,0 +1,11 @@
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="200" cy="200" r="198" fill="#2d2d2d" stroke="#1f1f1f" stroke-width="4" />
+  <rect x="62" y="62" width="276" height="276" fill="#000000" />
+  <rect x="80" y="78" width="36" height="180" fill="#FFFFFF" />
+  <rect x="132" y="78" width="36" height="92" fill="#FFFFFF" />
+  <rect x="184" y="78" width="36" height="180" fill="#FFFFFF" />
+  <rect x="236" y="78" width="36" height="180" fill="#FFFFFF" />
+  <rect x="286" y="78" width="36" height="92" fill="#FFFFFF" />
+  <rect x="62" y="276" width="276" height="62" fill="#E50914" />
+  <text x="200" y="318" fill="#FFFFFF" text-anchor="middle" font-size="35" font-weight="600" font-family="system-ui, -apple-system, sans-serif">MobilyaPlan</text>
+</svg>

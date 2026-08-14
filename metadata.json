@@ -1,0 +1,6 @@
+{
+  "name": "MobilyaPlan - AI CAD/CAM",
+  "description": "Yapay Zeka Destekli Bulut Tabanlı Mobilya CAD/CAM Tasarım ve Üretim Yazılımı",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

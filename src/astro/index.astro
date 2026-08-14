@@ -1,0 +1,30 @@
+---
+import Layout from './Layout.astro';
+import Hero from './Hero.astro';
+
+// Interactive React components can be mounted in Astro with client:visible
+// Example: import { AiInteractiveCompare } from '../components/AiInteractiveCompare';
+---
+
+<Layout
+  title="Yeni Nesil Mobilya Çizim Programı | MobilyaPlan & FurnitureDraw"
+  description="Yeni Nesil 3D Mobilya Çizim Programı. Marangozlardan iç mimarlara herkes için 10 dakikada öğrenilen kolay, hızlı bulut tabanlı 3D dolap tasarımı, akıllı nesting ve anında fotogerçekçi render."
+  canonical="https://www.mobilyaplan.com/"
+  lang="tr"
+>
+  <main>
+    <!-- 1. Hero Section (Semantik <header> / <section>) -->
+    <Hero lang="tr" />
+
+    <!-- 2. AI Render Showcase, Comparison, Features, Calculator, Pricing, FAQ -->
+    <!-- In an Astro project, React islands are mounted via:
+      <NanoBananaRenderShowcase client:visible />
+      <ComparisonSection client:visible />
+      <FeaturesSection client:visible />
+      <SavingsCalculator client:visible />
+      <PricingSection client:visible />
+      <TestimonialsSection client:visible />
+      <FaqSection client:visible />
+    -->
+  </main>
+</Layout>

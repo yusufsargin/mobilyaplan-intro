@@ -1,0 +1,100 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  lang?: 'tr' | 'en';
+}
+
+const {
+  title = "Yeni Nesil Mobilya Çizim Programı | MobilyaPlan & FurnitureDraw",
+  description = "Yeni Nesil 3D Mobilya Çizim Programı. Marangozlardan iç mimarlara herkes için 10 dakikada öğrenilen kolay, hızlı bulut tabanlı 3D dolap tasarımı, akıllı nesting ve anında fotogerçekçi render.",
+  canonical = "https://www.mobilyaplan.com/",
+  lang = "tr"
+} = Astro.props;
+
+const isTr = lang === 'tr';
+const brandDomain = isTr ? 'mobilyaplan.com' : 'furnituredraw.com';
+const brandUrl = `https://www.${brandDomain}/`;
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="yeni nesil mobilya çizim programı, mobilya çizim programı, furnituredraw, mobilyaplan, 3d mobilya tasarımı, mutfak dolabı çizimi, akıllı nesting, cnc g-code, fotogerçekçi render, marangoz programı" />
+    <meta name="author" content="MobilyaPlan / FurnitureDraw" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- i18n hreflang Tags -->
+    <link rel="alternate" hreflang="tr" href="https://www.mobilyaplan.com/" />
+    <link rel="alternate" hreflang="tr-TR" href="https://www.mobilyaplan.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.furnituredraw.com/" />
+    <link rel="alternate" hreflang="en-US" href="https://www.furnituredraw.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.furnituredraw.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="MobilyaPlan / FurnitureDraw" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${brandUrl}og-image.jpg`} />
+    <meta property="og:locale" content={isTr ? "tr_TR" : "en_US"} />
+    <meta property="og:locale:alternate" content={isTr ? "en_US" : "tr_TR"} />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${brandUrl}og-image.jpg`} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.mobilyaplan.com/#software",
+          "name": "MobilyaPlan / FurnitureDraw",
+          "alternateName": "Yeni Nesil Mobilya Çizim Programı",
+          "operatingSystem": "Web Browser, Cloud Based",
+          "applicationCategory": "DesignApplication",
+          "description": description,
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "3 Gün Sınırsız Ücretsiz Deneme"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "1240"
+          }
+        }
+      ]
+    })} />
+  </head>
+  <body class="bg-black text-white font-sans selection:bg-white selection:text-black antialiased overflow-x-hidden">
+    <slot />
+  </body>
+</html>
