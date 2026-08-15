@@ -61,10 +61,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             : 'bg-white/80 backdrop-blur-sm border-b border-zinc-200/60 py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-4 xl:gap-6">
             {/* Dynamic Brand Logo */}
-            <a href={brandUrl} className="flex items-center gap-3 group">
+            <a href={brandUrl} className="flex items-center gap-3 group shrink-0">
               <MobilyaPlanLogo className="w-10 h-10 group-hover:scale-105 transition-transform duration-200" />
               <div>
                 <div className="flex items-center gap-1.5">
@@ -84,20 +84,22 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
 
             {/* Quick Links for Desktop */}
-            <nav className="hidden lg:flex items-center space-x-1 bg-zinc-100 p-1.5 rounded-full border border-zinc-200">
+            <nav className="hidden xl:flex flex-1 justify-center min-w-0 px-4">
+              <div className="inline-flex items-center gap-2 2xl:gap-2.5 bg-zinc-100 p-1.5 rounded-full border border-zinc-200">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-3.5 py-1.5 text-xs font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white rounded-full transition-all duration-200 whitespace-nowrap shadow-none hover:shadow-xs"
+                  className="px-4 py-2 text-xs font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white rounded-full transition-all duration-200 whitespace-nowrap shadow-none hover:shadow-xs"
                 >
                   {link.name}
                 </a>
               ))}
+              </div>
             </nav>
 
             {/* Right Side Controls */}
-            <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
               {/* Language Switcher Button (TR / EN) */}
               <LanguageToggle variant="compact" />
 
@@ -114,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* Hamburger Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(true)}
-                className="flex lg:hidden items-center gap-2 px-3.5 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-bold transition-all shadow-xs cursor-pointer border border-zinc-300"
+                className="flex xl:hidden items-center gap-2 px-3.5 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-bold transition-all shadow-xs cursor-pointer border border-zinc-300"
                 aria-label={t.common.menu}
               >
                 <i className="fa-solid fa-bars text-sm text-zinc-800"></i>
