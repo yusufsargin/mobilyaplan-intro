@@ -1,4 +1,5 @@
 import React from 'react';
+import { LOCALE_PATH } from '../config/seo';
 import { useLanguage } from '../i18n/LanguageContext';
 
 interface LanguageToggleProps {
@@ -7,37 +8,37 @@ interface LanguageToggleProps {
 }
 
 export const LanguageToggle: React.FC<LanguageToggleProps> = ({ variant = 'compact', className = '' }) => {
-  const { language, setLanguage } = useLanguage();
+  const { language } = useLanguage();
 
   if (variant === 'expanded') {
     return (
       <div className={`flex items-center gap-1.5 p-1 bg-zinc-100 rounded-xl border border-zinc-200 ${className}`}>
-        <button
-          type="button"
-          onClick={() => setLanguage('tr')}
-          className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+        <a
+          href={LOCALE_PATH.tr}
+          className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-bold transition-all ${
             language === 'tr'
               ? 'bg-zinc-900 text-white font-black shadow-xs'
               : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60'
           }`}
           aria-label="Türkçe Dilini Seç"
+          aria-current={language === 'tr' ? 'page' : undefined}
         >
           <span className="text-sm">🇹🇷</span>
           <span>Türkçe (TR)</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setLanguage('en')}
-          className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+        </a>
+        <a
+          href={LOCALE_PATH.en}
+          className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-bold transition-all ${
             language === 'en'
               ? 'bg-zinc-900 text-white font-black shadow-xs'
               : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60'
           }`}
           aria-label="Select English Language"
+          aria-current={language === 'en' ? 'page' : undefined}
         >
           <span className="text-sm">🇬🇧</span>
           <span>English (EN)</span>
-        </button>
+        </a>
       </div>
     );
   }
@@ -48,35 +49,33 @@ export const LanguageToggle: React.FC<LanguageToggleProps> = ({ variant = 'compa
       role="group"
       aria-label="Language selector"
     >
-      <button
-        type="button"
-        onClick={() => setLanguage('tr')}
-        className={`px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+      <a
+        href={LOCALE_PATH.tr}
+        className={`px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
           language === 'tr'
             ? 'bg-zinc-900 text-white font-black shadow-xs'
             : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60'
         }`}
         title="Türkçe"
-        aria-pressed={language === 'tr'}
+        aria-current={language === 'tr' ? 'page' : undefined}
       >
         <span className="text-xs">🇹🇷</span>
         <span>TR</span>
-      </button>
+      </a>
 
-      <button
-        type="button"
-        onClick={() => setLanguage('en')}
-        className={`px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+      <a
+        href={LOCALE_PATH.en}
+        className={`px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${
           language === 'en'
             ? 'bg-zinc-900 text-white font-black shadow-xs'
             : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/60'
         }`}
         title="English"
-        aria-pressed={language === 'en'}
+        aria-current={language === 'en' ? 'page' : undefined}
       >
         <span className="text-xs">🇬🇧</span>
         <span>EN</span>
-      </button>
+      </a>
     </div>
   );
 };

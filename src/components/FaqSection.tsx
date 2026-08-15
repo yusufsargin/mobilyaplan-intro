@@ -6,10 +6,6 @@ export const FaqSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const filteredItems = selectedCategory === 'all'
-    ? t.faq.items
-    : t.faq.items.filter(item => item.category === selectedCategory);
-
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -54,12 +50,15 @@ export const FaqSection: React.FC = () => {
 
         {/* FAQ Accordion List */}
         <div className="space-y-4">
-          {filteredItems.map((faq, index) => {
+          {t.faq.items.map((faq, index) => {
+            const isVisible = selectedCategory === 'all' || faq.category === selectedCategory;
             const isOpen = openIndex === index;
             return (
               <div
-                key={index}
-                className="bg-white border border-zinc-200 rounded-2xl overflow-hidden transition-all duration-200 shadow-xs"
+                key={`${faq.category}-${faq.q}`}
+                className={`bg-white border border-zinc-200 rounded-2xl overflow-hidden transition-all duration-200 shadow-xs ${
+                  isVisible ? '' : 'hidden'
+                }`}
               >
                 <button
                   onClick={() => toggleFaq(index)}
@@ -76,11 +75,13 @@ export const FaqSection: React.FC = () => {
                   </div>
                 </button>
 
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 font-normal">
-                    {faq.a}
-                  </div>
-                )}
+                <div
+                  className={`px-6 pb-6 pt-1 text-sm text-zinc-600 leading-relaxed border-t border-zinc-100 font-normal ${
+                    isOpen ? '' : 'hidden'
+                  }`}
+                >
+                  {faq.a}
+                </div>
               </div>
             );
           })}

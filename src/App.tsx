@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LanguageProvider } from './i18n/LanguageContext';
+import { LanguageProvider, type Language } from './i18n/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ComparisonSection } from './components/ComparisonSection';
@@ -16,7 +16,11 @@ import { VideoModal } from './components/VideoModal';
 import { TrialModal } from './components/TrialModal';
 import { FloatingActionBar } from './components/FloatingActionBar';
 
-export default function App() {
+interface AppProps {
+  language: Language;
+}
+
+export default function App({ language }: AppProps) {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
@@ -43,7 +47,7 @@ export default function App() {
   };
 
   return (
-    <LanguageProvider>
+    <LanguageProvider initialLanguage={language}>
       {isBlogPortalOpen ? (
         <BlogPortal
           initialPostId={blogViewPostId}

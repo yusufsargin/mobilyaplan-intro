@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { translations, TranslationKeys } from './translations';
+import React, { createContext, useContext } from 'react';
+import { LOCALE_PATH } from '../config/seo';
+import { translations, type TranslationKeys } from './translations';
 
 export type Language = 'tr' | 'en';
 
@@ -13,71 +14,20 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'mobilyaplan_lang';
-
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>(() => {
-    // 1. Check user preference stored in localStorage
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved === 'tr' || saved === 'en') {
-        return saved;
-      }
-      // 2. Auto-detect from browser locale
-      const browserLang = (navigator.language || (navigator as any).userLanguage || '').toLowerCase();
-      if (browserLang.startsWith('tr')) {
-        return 'tr';
-      }
-      return 'en'; // Default to English for international visitors
-    }
-    return 'tr';
-  });
+export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLanguage: Language }> = ({
+  children,
+  initialLanguage,
+}) => {
+  const language = initialLanguage;
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem(STORAGE_KEY, lang);
-      document.documentElement.lang = lang;
-    }
+    if (lang === language || typeof window === 'undefined') return;
+    window.location.assign(LOCALE_PATH[lang]);
   };
 
   const toggleLanguage = () => {
     setLanguage(language === 'tr' ? 'en' : 'tr');
   };
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      document.documentElement.lang = language;
-
-      if (language === 'tr') {
-        document.title = 'Yeni Nesil Mobilya Çizim Programı | MobilyaPlan';
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-          metaDesc.setAttribute(
-            'content',
-            'Yeni Nesil 3D Mobilya Çizim Programı. Marangozlardan iç mimarlara herkes için 10 dakikada öğrenilen kolay, hızlı bulut tabanlı 3D dolap tasarımı, akıllı nesting ve anında fotogerçekçi render.'
-          );
-        }
-        const canonical = document.querySelector('link[rel="canonical"]');
-        if (canonical) {
-          canonical.setAttribute('href', 'https://www.mobilyaplan.com/');
-        }
-      } else {
-        document.title = 'FurnitureDraw • Next-Gen 3D Furniture Design Tool | Fast & Easy CAD';
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-          metaDesc.setAttribute(
-            'content',
-            'Next-Gen 3D Furniture Design Tool. Fast, easy and cloud-based cabinet CAD design, smart nesting optimization, and instant 4K photorealistic renders for woodshops and designers.'
-          );
-        }
-        const canonical = document.querySelector('link[rel="canonical"]');
-        if (canonical) {
-          canonical.setAttribute('href', 'https://www.furnituredraw.com/');
-        }
-      }
-    }
-  }, [language]);
 
   const getWhatsAppUrl = (customMsg?: string) => {
     const defaultMsg =

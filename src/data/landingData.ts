@@ -1,4 +1,4 @@
-import { PricingPlan, ComparisonRow, CncBrand, PresetCommand } from '../types';
+import type { PricingPlan, ComparisonRow, CncBrand, PresetCommand } from '../types';
 
 export const PRESET_COMMANDS: PresetCommand[] = [
   {
