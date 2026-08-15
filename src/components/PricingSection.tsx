@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 interface PricingSectionProps {
   onOpenTrialModal: () => void;
@@ -8,7 +9,7 @@ interface PricingSectionProps {
 export const PricingSection: React.FC<PricingSectionProps> = () => {
   const { t, language, getWhatsAppUrl } = useLanguage();
   const isTr = language === 'tr';
-  const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+  const brandUrl = getProductUrl(language);
 
   const standardPlan = t.pricing.plans.standard;
   const cncPlan = t.pricing.plans.cnc;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MobilyaPlanLogo } from './MobilyaPlanLogo';
 import { useLanguage } from '../i18n/LanguageContext';
 import { LanguageToggle } from './LanguageToggle';
+import { getProductUrl } from '../config/urls';
 
 interface NavbarProps {
   onOpenTrialModal?: () => void;
@@ -41,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { name: t.nav.faq, href: '#sss' },
   ];
 
-  const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+  const brandUrl = getProductUrl(language);
 
   const handleLinkClick = (link: { href: string; isBlog?: boolean }) => {
     setIsMenuOpen(false);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -9,8 +10,7 @@ interface VideoModalProps {
 
 export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
   const { t, language } = useLanguage();
-  const isTr = language === 'tr';
-  const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+  const brandUrl = getProductUrl(language);
 
   if (!isOpen) return null;
 

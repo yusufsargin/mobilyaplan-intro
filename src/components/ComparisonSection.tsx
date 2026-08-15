@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 interface ComparisonSectionProps {
   onOpenTrialModal?: () => void;
@@ -8,8 +9,7 @@ interface ComparisonSectionProps {
 export const ComparisonSection: React.FC<ComparisonSectionProps> = () => {
   const { t, language } = useLanguage();
   const comp = t.comparison;
-  const isTr = language === 'tr';
-  const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+  const brandUrl = getProductUrl(language);
 
   return (
     <section id="karsilastirma" className="py-20 lg:py-28 bg-zinc-50/70 text-zinc-900 border-t border-zinc-200">

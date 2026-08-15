@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 interface SavingsCalculatorProps {
   onOpenTrialModal: () => void;
@@ -8,7 +9,7 @@ interface SavingsCalculatorProps {
 export const SavingsCalculator: React.FC<SavingsCalculatorProps> = () => {
   const { t, language } = useLanguage();
   const isTr = language === 'tr';
-  const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+  const brandUrl = getProductUrl(language);
   const [monthlyPlates, setMonthlyPlates] = useState<number>(120);
   const [plateCost, setPlateCost] = useState<number>(isTr ? 1400 : 45);
 

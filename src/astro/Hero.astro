@@ -3,9 +3,11 @@ export interface Props {
   lang?: 'tr' | 'en';
 }
 
+import { getProductUrl } from '../config/urls';
+
 const { lang = 'tr' } = Astro.props;
 const isTr = lang === 'tr';
-const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+const brandUrl = getProductUrl(lang);
 
 const t = {
   badge: isTr ? '✨ Yeni Nesil 3D Mobilya Çizim Aracı' : '✨ Next-Gen 3D Furniture Design Tool',

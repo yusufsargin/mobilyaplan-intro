@@ -1,6 +1,7 @@
 import React from 'react';
 import { MobilyaPlanLogo } from './MobilyaPlanLogo';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 interface TrialModalProps {
   isOpen: boolean;
@@ -11,9 +12,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
   const { t, language, getWhatsAppUrl } = useLanguage();
   if (!isOpen) return null;
 
-  const isTr = language === 'tr';
-  const brandDomain = isTr ? 'mobilyaplan.com' : 'furnituredraw.com';
-  const brandUrl = `https://www.${brandDomain}/`;
+  const brandUrl = getProductUrl(language);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">

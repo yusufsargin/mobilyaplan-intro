@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 export const FloatingActionBar: React.FC = () => {
   const { t, language, getWhatsAppUrl } = useLanguage();
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
-  const isTr = language === 'tr';
-  const brandDomain = isTr ? 'mobilyaplan.com' : 'furnituredraw.com';
-  const brandUrl = `https://www.${brandDomain}/`;
+  const brandUrl = getProductUrl(language);
 
   useEffect(() => {
     const handleScroll = () => {

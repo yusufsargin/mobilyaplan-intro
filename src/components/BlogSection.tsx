@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 interface BlogSectionProps {
   onOpenTrialModal?: () => void;
@@ -14,7 +15,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
 }) => {
   const { t, language } = useLanguage();
   const isTr = language === 'tr';
-  const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+  const brandUrl = getProductUrl(language);
   const blog = t.blog;
 
   const [selectedPostId, setSelectedPostId] = useState<string | null>(null);

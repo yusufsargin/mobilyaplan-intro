@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 interface HeroProps {
   onOpenTrialModal?: () => void;
@@ -8,8 +9,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = () => {
   const { t, language } = useLanguage();
-  const isTr = language === 'tr';
-  const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+  const brandUrl = getProductUrl(language);
 
   return (
     <section className="relative pt-32 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-white text-zinc-900 border-b border-zinc-200">

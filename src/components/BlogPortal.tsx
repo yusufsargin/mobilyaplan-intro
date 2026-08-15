@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { MobilyaPlanLogo } from './MobilyaPlanLogo';
 import { LanguageToggle } from './LanguageToggle';
+import { getProductUrl } from '../config/urls';
 
 interface BlogPortalProps {
   initialPostId?: string | null;
@@ -16,7 +17,7 @@ export const BlogPortal: React.FC<BlogPortalProps> = ({
 }) => {
   const { t, language } = useLanguage();
   const isTr = language === 'tr';
-  const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+  const brandUrl = getProductUrl(language);
   const blog = t.blog;
 
   const [activeArticleId, setActiveArticleId] = useState<string | null>(initialPostId);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { MobilyaPlanLogo } from './MobilyaPlanLogo';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 interface FooterProps {
   onOpenTrialModal: () => void;
@@ -10,7 +11,7 @@ export const Footer: React.FC<FooterProps> = () => {
   const { t, language, getWhatsAppUrl } = useLanguage();
   const isTr = language === 'tr';
   const brandDomain = isTr ? 'mobilyaplan.com' : 'furnituredraw.com';
-  const brandUrl = `https://www.${brandDomain}/`;
+  const brandUrl = getProductUrl(language);
 
   return (
     <footer id="contact" className="bg-black text-zinc-400 border-t border-zinc-900 pt-16 pb-12 relative overflow-hidden">

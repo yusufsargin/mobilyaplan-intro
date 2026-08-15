@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { getProductUrl } from '../config/urls';
 
 interface WorkshopGallerySectionProps {
   onOpenTrialModal?: () => void;
@@ -8,7 +9,7 @@ interface WorkshopGallerySectionProps {
 export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ onOpenTrialModal }) => {
   const { t, language } = useLanguage();
   const isTr = language === 'tr';
-  const brandUrl = isTr ? 'https://www.mobilyaplan.com/' : 'https://www.furnituredraw.com/';
+  const brandUrl = getProductUrl(language);
   const gallery = t.workshopGallery;
 
   // Selected state for Video Play Modal
