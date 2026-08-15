@@ -56,7 +56,7 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
               <div className="space-y-2 border-b border-zinc-100 pb-5">
                 <div className="flex items-center justify-between">
                   <h3 className="text-2xl font-black text-zinc-900">{standardPlan.name}</h3>
-                  <span className="text-[11px] font-mono text-zinc-700 uppercase bg-zinc-100 px-2.5 py-1 rounded-lg border border-zinc-200">
+                  <span className="text-xs font-mono text-zinc-700 uppercase bg-zinc-100 px-2.5 py-1 rounded-lg border border-zinc-200">
                     CAD & Render
                   </span>
                 </div>
@@ -75,8 +75,8 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
                     {t.pricing.periodAnnual}
                   </span>
                 </div>
-                <p className="text-[11px] font-mono text-emerald-700 font-bold flex items-center gap-1">
-                  <i className="fa-solid fa-circle-check text-[10px]"></i>
+                <p className="text-xs font-mono text-emerald-700 font-bold flex items-center gap-1">
+                  <i className="fa-solid fa-circle-check text-xs"></i>
                   <span>{isTr ? 'Yıllık Sürüm • 365 Gün Kesintisiz Erişim' : 'Annual Edition • 365 Days Full Access'}</span>
                 </p>
               </div>
@@ -106,7 +106,7 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
                 <i className="fa-solid fa-arrow-right text-xs"></i>
               </a>
 
-              <p className="text-center text-[11px] text-zinc-500 font-mono">
+              <p className="text-center text-xs text-zinc-500 font-mono">
                 {t.pricing.noCardNeeded}
               </p>
             </div>
@@ -117,7 +117,7 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
             
             {/* Most Popular Badge */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-amber-400 text-zinc-950 text-xs font-mono font-black shadow-md tracking-wider uppercase flex items-center gap-1.5">
-              <i className="fa-solid fa-star text-[10px]"></i>
+              <i className="fa-solid fa-star text-xs"></i>
               <span>{t.pricing.popularBadge}</span>
             </div>
 
@@ -126,7 +126,7 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
               <div className="space-y-2 border-b border-zinc-800 pb-5">
                 <div className="flex items-center justify-between">
                   <h3 className="text-2xl font-black text-white">{cncPlan.name}</h3>
-                  <span className="text-[11px] font-mono text-zinc-950 font-bold uppercase bg-white px-2.5 py-1 rounded-lg">
+                  <span className="text-xs font-mono text-zinc-950 font-bold uppercase bg-white px-2.5 py-1 rounded-lg">
                     FULL CAM & CNC
                   </span>
                 </div>
@@ -145,8 +145,8 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
                     {t.pricing.periodAnnual}
                   </span>
                 </div>
-                <p className="text-[11px] font-mono text-amber-400 font-bold flex items-center gap-1">
-                  <i className="fa-solid fa-bolt text-[10px]"></i>
+                <p className="text-xs font-mono text-amber-400 font-bold flex items-center gap-1">
+                  <i className="fa-solid fa-bolt text-xs"></i>
                   <span>{isTr ? 'Yıllık Sürüm • Tüm CNC Post İşlemcileri Dahil' : 'Annual Edition • All CNC Post Processors Included'}</span>
                 </p>
               </div>
@@ -176,7 +176,7 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
                 <i className="fa-solid fa-arrow-right text-xs"></i>
               </a>
 
-              <p className="text-center text-[11px] text-zinc-400 font-mono">
+              <p className="text-center text-xs text-zinc-400 font-mono">
                 {t.pricing.noCardNeeded}
               </p>
             </div>

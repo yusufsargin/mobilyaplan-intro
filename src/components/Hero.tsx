@@ -49,8 +49,12 @@ export const Hero: React.FC<HeroProps> = () => {
           </a>
 
           <p className="text-xs text-zinc-500 font-mono flex items-center gap-2 mt-1">
-            <i className="fa-solid fa-circle-check text-emerald-600 text-[11px]"></i>
+            <i className="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
             <span>{t.hero.trustNote}</span>
+          </p>
+          <p className="text-xs sm:text-sm text-zinc-700 font-semibold flex items-center gap-2">
+            <i className="fa-solid fa-users text-zinc-500 text-[12px]"></i>
+            <span>{t.hero.userCount}</span>
           </p>
         </div>
 
@@ -70,7 +74,7 @@ export const Hero: React.FC<HeroProps> = () => {
               </div>
               <div className="flex items-center gap-2 text-zinc-500">
                 <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                <span className="font-bold text-zinc-800 text-[11px]">HD 1080p</span>
+                <span className="font-bold text-zinc-800 text-xs">HD 1080p</span>
               </div>
             </div>
 
@@ -93,7 +97,7 @@ export const Hero: React.FC<HeroProps> = () => {
                   <i className="fa-solid fa-hammer text-zinc-700"></i>
                   <span>{t.hero.audienceTag1}</span>
                 </div>
-                <p className="text-[11px] text-zinc-600 leading-snug">
+                <p className="text-xs text-zinc-600 leading-snug">
                   {t.hero.audienceTag1Desc}
                 </p>
               </div>
@@ -103,7 +107,7 @@ export const Hero: React.FC<HeroProps> = () => {
                   <i className="fa-solid fa-compass-drafting text-zinc-700"></i>
                   <span>{t.hero.audienceTag2}</span>
                 </div>
-                <p className="text-[11px] text-zinc-600 leading-snug">
+                <p className="text-xs text-zinc-600 leading-snug">
                   {t.hero.audienceTag2Desc}
                 </p>
               </div>
@@ -113,7 +117,7 @@ export const Hero: React.FC<HeroProps> = () => {
                   <i className="fa-solid fa-user-gear text-zinc-700"></i>
                   <span>{t.hero.audienceTag3}</span>
                 </div>
-                <p className="text-[11px] text-zinc-600 leading-snug">
+                <p className="text-xs text-zinc-600 leading-snug">
                   {t.hero.audienceTag3Desc}
                 </p>
               </div>

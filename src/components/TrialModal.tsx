@@ -32,7 +32,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div className="space-y-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[11px] font-mono text-zinc-300">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300">
             <i className="fa-solid fa-bolt text-white"></i>
             <span>{t.trialModal.badge}</span>
           </div>
@@ -82,7 +82,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose }) => {
           </a>
         </div>
 
-        <p className="text-[11px] text-zinc-500 font-mono">
+        <p className="text-xs text-zinc-500 font-mono">
           {t.trialModal.note}
         </p>
 

@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = () => {
                     <>Furniture<span className="text-zinc-400">Draw</span></>
                   )}
                 </span>
-                <p className="text-[10px] text-zinc-500 font-mono">{t.common.brandSubtitle}</p>
+                <p className="text-xs text-zinc-500 font-mono">{t.common.brandSubtitle}</p>
               </div>
             </a>
 
@@ -102,7 +102,7 @@ export const Footer: React.FC<FooterProps> = () => {
         {/* Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 font-mono">
           <p>{t.footer.copyright}</p>
-          <div className="flex items-center space-x-6 text-[11px]">
+          <div className="flex items-center space-x-6 text-xs">
             <span>{t.footer.legalNote}</span>
           </div>
         </div>

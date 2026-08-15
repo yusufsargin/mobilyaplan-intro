@@ -75,11 +75,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                       <>Furniture<span className="text-zinc-500">Draw</span></>
                     )}
                   </span>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-300">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-300">
                     WEB CAD
                   </span>
                 </div>
-                <p className="text-[10px] text-zinc-500 font-mono hidden sm:block">{t.common.brandSubtitle}</p>
+                <p className="text-[12px] text-zinc-500 font-mono hidden sm:block">{t.common.brandSubtitle}</p>
               </div>
             </a>
 
@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-4 py-2 text-xs font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white rounded-full transition-all duration-200 whitespace-nowrap shadow-none hover:shadow-xs"
+                  className="px-4 py-2 text-[12px] font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white rounded-full transition-all duration-200 whitespace-nowrap shadow-none hover:shadow-xs"
                 >
                   {link.name}
                 </a>
@@ -152,7 +152,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                         <>Furniture<span className="text-zinc-500">Draw</span></>
                       )}
                     </span>
-                    <p className="text-[11px] text-zinc-500 font-mono">{t.common.brandSubtitle}</p>
+                    <p className="text-xs text-zinc-500 font-mono">{t.common.brandSubtitle}</p>
                   </div>
                 </div>
 

@@ -54,6 +54,7 @@ export interface TranslationKeys {
     subtitle: string;
     ctaPrimary: string;
     trustNote: string;
+    userCount: string;
     videoTitle: string;
     audienceTag1: string;
     audienceTag1Desc: string;
@@ -456,8 +457,8 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
       blog: 'Blog',
       faq: 'SSS',
       quickMenu: 'Hızlı Menü',
-      statsHeadline: '500+ MOBİLYA ATÖLYESİ KULLANIYOR',
-      statsDesc: 'MobilyaPlan, marangoz ve mobilya üreticileri için parametrik 3D tasarım, akıllı nesting ve yapay zeka render platformudur.',
+      statsHeadline: '2.000+ KULLANICI',
+      statsDesc: '2.000’den fazla kullanıcı MobilyaPlan ile 3D tasarım, akıllı nesting ve yapay zeka render kullanıyor.',
       directContact: 'Doğrudan İletişim',
     },
     hero: {
@@ -467,6 +468,7 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
       subtitle: 'Karmaşık teknik bilgi gerektirmez! Marangozlardan iç mimarlara, atölyelerden bireysel kullanıcılara kadar herkesin 10 dakikada öğrenip profesyonelce mobilya tasarlayabileceği bulut tabanlı çizim platformu.',
       ctaPrimary: 'Hemen Ücretsiz Başla',
       trustNote: '3 Gün Sınırsız Ücretsiz Deneme • Kredi Kartı Gerekmez • Sıfır Kurulum',
+      userCount: '2.000+ kullanıcı MobilyaPlan ile çiziyor',
       videoTitle: 'MobilyaPlan • 2 Dakikada Tanıtım & Hızlı Başlangıç',
       audienceTag1: 'Marangoz & Atölyeler',
       audienceTag1Desc: 'Ölçü gir, anında parça listesi ve fire tasarrufu al',
@@ -907,8 +909,8 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
       badge: 'Atölye Deneyimleri',
       titleLine1: 'Mobilya Üreticileri',
       titleLine2: 'MobilyaPlan Hakkında Ne Diyor?',
-      subtitle: 'Türkiye’nin dört bir yanındaki yüzlerce marangoz ve CNC atölyesi üretimini MobilyaPlan ile hızlandırdı.',
-      bottomNote: 'Siz de atölyenizi dijitalleştiren üreticilerin arasına katılın.',
+      subtitle: '2.000’den fazla kullanıcı ve atölye üretimini MobilyaPlan ile hızlandırdı.',
+      bottomNote: 'Siz de 2.000+ kullanıcının arasına katılın.',
       items: [
         {
           name: 'Ahmet Yılmaz',
@@ -1292,8 +1294,8 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
       blog: 'Blog',
       faq: 'FAQ',
       quickMenu: 'Quick Menu',
-      statsHeadline: '500+ WORKSHOPS WORLDWIDE',
-      statsDesc: 'FurnitureDraw is a modern, 100% web-based parametric furniture CAD/CAM design, smart nesting, and photorealistic AI render platform.',
+      statsHeadline: '2,000+ USERS',
+      statsDesc: 'More than 2,000 users design, nest, and render with FurnitureDraw every day.',
       directContact: 'Direct Contact',
     },
     hero: {
@@ -1303,6 +1305,7 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
       subtitle: 'No complex CAD training required. From carpenters to interior designers, custom woodshops to DIY home creators — anyone can master and design bespoke cabinetry in just 10 minutes.',
       ctaPrimary: 'Start Free Trial',
       trustNote: '3-Day Unlimited Free Trial • No Credit Card Required • Zero Installation',
+      userCount: '2,000+ users design with FurnitureDraw',
       videoTitle: 'FurnitureDraw • Quick Start & 2-Minute Demo',
       audienceTag1: 'Carpenters & Workshops',
       audienceTag1Desc: 'Input dimensions, get instant cutting lists and scrap savings',
@@ -1743,8 +1746,8 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
       badge: 'Cabinetmaker Case Studies',
       titleLine1: 'What Furniture Producers',
       titleLine2: 'Are Saying About FurnitureDraw?',
-      subtitle: 'Hundreds of custom cabinetmakers and CNC workshops have accelerated production and eliminated scrap.',
-      bottomNote: 'Join satisfied manufacturers worldwide — try free for 3 days.',
+      subtitle: 'More than 2,000 users and workshops have accelerated production with FurnitureDraw.',
+      bottomNote: 'Join 2,000+ users — try free for 3 days.',
       items: [
         {
           name: 'John Miller',

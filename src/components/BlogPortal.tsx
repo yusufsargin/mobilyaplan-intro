@@ -107,7 +107,7 @@ export const BlogPortal: React.FC<BlogPortalProps> = ({
                     <>Furniture<span className="text-zinc-500">Draw</span></>
                   )}
                 </span>
-                <span className="ml-2 text-[10px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-300">
+                <span className="ml-2 text-xs font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-300">
                   BLOG
                 </span>
               </div>
@@ -333,7 +333,7 @@ export const BlogPortal: React.FC<BlogPortalProps> = ({
                           />
                         </div>
 
-                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 font-bold uppercase">
+                        <span className="text-xs font-mono px-2 py-0.5 rounded bg-zinc-100 text-zinc-700 font-bold uppercase">
                           {rPost.category}
                         </span>
 
@@ -410,7 +410,7 @@ export const BlogPortal: React.FC<BlogPortalProps> = ({
                     {/* Featured Badge */}
                     <div className="absolute top-4 left-4">
                       <span className="px-3.5 py-1.5 rounded-full bg-amber-400 text-zinc-950 text-xs font-mono font-black uppercase tracking-wider shadow-md flex items-center gap-1.5">
-                        <i className="fa-solid fa-star text-[10px]"></i>
+                        <i className="fa-solid fa-star text-xs"></i>
                         <span>{blog.featuredBadge}</span>
                       </span>
                     </div>
@@ -438,7 +438,7 @@ export const BlogPortal: React.FC<BlogPortalProps> = ({
                     <div className="pt-4 border-t border-zinc-800 flex items-center justify-between">
                       <div className="text-xs text-zinc-400">
                         <span className="font-bold text-zinc-200">{featuredPost.author}</span>
-                        <p className="text-[11px] text-zinc-500">{featuredPost.authorRole}</p>
+                        <p className="text-xs text-zinc-500">{featuredPost.authorRole}</p>
                       </div>
 
                       <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white text-zinc-950 font-bold text-xs group-hover:bg-amber-400 transition-colors">
@@ -529,14 +529,14 @@ export const BlogPortal: React.FC<BlogPortalProps> = ({
 
                           {/* Top Category Badge */}
                           <div className="absolute top-4 left-4">
-                            <span className="px-3 py-1 rounded-full bg-zinc-900/90 text-white text-[11px] font-mono font-bold uppercase tracking-wider backdrop-blur-xs border border-zinc-700">
+                            <span className="px-3 py-1 rounded-full bg-zinc-900/90 text-white text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-xs border border-zinc-700">
                               {post.category}
                             </span>
                           </div>
 
                           {/* Read Time */}
-                          <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/70 text-zinc-200 text-[11px] font-mono backdrop-blur-xs flex items-center gap-1.5">
-                            <i className="fa-regular fa-clock text-[10px] text-amber-400"></i>
+                          <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/70 text-zinc-200 text-xs font-mono backdrop-blur-xs flex items-center gap-1.5">
+                            <i className="fa-regular fa-clock text-xs text-amber-400"></i>
                             <span>{post.readTime}</span>
                           </div>
                         </div>
@@ -561,7 +561,7 @@ export const BlogPortal: React.FC<BlogPortalProps> = ({
                             {post.tags.map((tag, tagIdx) => (
                               <span
                                 key={tagIdx}
-                                className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-600 border border-zinc-200"
+                                className="text-xs font-mono px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-600 border border-zinc-200"
                               >
                                 #{tag}
                               </span>

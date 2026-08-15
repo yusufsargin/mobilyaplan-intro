@@ -71,14 +71,14 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
 
                   {/* Top Category Badge */}
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-zinc-900/90 text-white text-[11px] font-mono font-bold uppercase tracking-wider backdrop-blur-xs border border-zinc-700">
+                    <span className="px-3 py-1 rounded-full bg-zinc-900/90 text-white text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-xs border border-zinc-700">
                       {post.category}
                     </span>
                   </div>
 
                   {/* Read Time Pill */}
-                  <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/70 text-zinc-200 text-[11px] font-mono backdrop-blur-xs flex items-center gap-1.5">
-                    <i className="fa-regular fa-clock text-[10px] text-amber-400"></i>
+                  <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/70 text-zinc-200 text-xs font-mono backdrop-blur-xs flex items-center gap-1.5">
+                    <i className="fa-regular fa-clock text-xs text-amber-400"></i>
                     <span>{post.readTime}</span>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
                     {post.tags.map((tag, tagIdx) => (
                       <span
                         key={tagIdx}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-600 border border-zinc-200"
+                        className="text-xs font-mono px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-600 border border-zinc-200"
                       >
                         #{tag}
                       </span>
@@ -185,7 +185,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             {/* Modal Header Bar */}
             <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-zinc-200 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-800 text-[11px] font-mono font-bold uppercase">
+                <span className="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-800 text-xs font-mono font-bold uppercase">
                   {activePost.category}
                 </span>
                 <span className="text-zinc-400">•</span>

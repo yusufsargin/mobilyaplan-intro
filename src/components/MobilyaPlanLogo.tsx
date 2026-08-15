@@ -70,7 +70,7 @@ export const MobilyaPlanLogo: React.FC<MobilyaPlanLogoProps> = ({
               <>Furniture<span className="text-zinc-400">Draw</span></>
             )}
           </span>
-          <span className="text-[10px] font-mono text-zinc-500 mt-1">{t.common.brandSubtitle}</span>
+          <span className="text-xs font-mono text-zinc-500 mt-1">{t.common.brandSubtitle}</span>
         </div>
       )}
     </div>

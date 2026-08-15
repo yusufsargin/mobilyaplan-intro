@@ -26,7 +26,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
             </div>
             <div>
               <h3 className="text-sm font-black text-white">{t.videoModal.title}</h3>
-              <p className="text-[11px] text-zinc-500 font-mono">{t.common.brandSubtitle}</p>
+              <p className="text-xs text-zinc-500 font-mono">{t.common.brandSubtitle}</p>
             </div>
           </div>
 

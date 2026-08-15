@@ -62,11 +62,11 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = () => {
                   <div>
                     <h4 className="text-sm font-bold text-zinc-900">{item.name}</h4>
                     <p className="text-xs text-zinc-500">{item.role}</p>
-                    <p className="text-[10px] text-zinc-400 font-mono">{item.location}</p>
+                    <p className="text-xs text-zinc-400 font-mono">{item.location}</p>
                   </div>
                 </div>
 
-                <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-zinc-200 text-zinc-700 border border-zinc-300 hidden sm:inline-block">
+                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-zinc-200 text-zinc-700 border border-zinc-300 hidden sm:inline-block">
                   {item.badge}
                 </span>
               </div>

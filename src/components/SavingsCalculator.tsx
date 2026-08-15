@@ -112,7 +112,7 @@ export const SavingsCalculator: React.FC<SavingsCalculatorProps> = () => {
                   onChange={(e) => setMonthlyPlates(Number(e.target.value))}
                   className="w-full accent-zinc-900 cursor-pointer"
                 />
-                <div className="flex justify-between text-[10px] text-zinc-500 font-mono">
+                <div className="flex justify-between text-xs text-zinc-500 font-mono">
                   <span>20</span>
                   <span>300</span>
                   <span>600 {t.savings.slider1Unit}</span>
@@ -136,7 +136,7 @@ export const SavingsCalculator: React.FC<SavingsCalculatorProps> = () => {
                   onChange={(e) => setPlateCost(Number(e.target.value))}
                   className="w-full accent-zinc-900 cursor-pointer"
                 />
-                <div className="flex justify-between text-[10px] text-zinc-500 font-mono">
+                <div className="flex justify-between text-xs text-zinc-500 font-mono">
                   <span>{isTr ? '600 ₺' : '$20'}</span>
                   <span>{isTr ? '2.000 ₺' : '$85'}</span>
                   <span>{isTr ? '3.500 ₺' : '$150'}</span>

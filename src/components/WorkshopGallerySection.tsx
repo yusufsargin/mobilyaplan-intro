@@ -92,7 +92,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
                   className="px-3.5 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white text-xs font-bold transition-colors flex items-center gap-1.5 backdrop-blur-xs"
                 >
                   <span>{isTr ? 'Takip Et' : 'Follow'}</span>
-                  <i className="fa-solid fa-plus text-[10px]"></i>
+                  <i className="fa-solid fa-plus text-xs"></i>
                 </a>
               </div>
 
@@ -134,7 +134,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
             <div className="lg:col-span-4 space-y-4">
               {/* Fast Trial Card */}
               <div className="p-6 rounded-3xl bg-zinc-900 text-white space-y-3 shadow-md">
-                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-300 text-[11px] font-mono font-bold">
+                <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-mono font-bold">
                   <i className="fa-solid fa-bolt"></i>
                   <span>{isTr ? 'Hemen Başlayın' : 'Get Started'}</span>
                 </div>
@@ -154,7 +154,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
                     className="w-full py-2.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-xs transition-colors flex items-center justify-center gap-1.5"
                   >
                     <span>{isTr ? 'Ücretsiz Başla' : 'Start Free Trial'}</span>
-                    <i className="fa-solid fa-arrow-right text-[11px]"></i>
+                    <i className="fa-solid fa-arrow-right text-xs"></i>
                   </a>
                 </div>
               </div>
@@ -239,14 +239,14 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
 
                           {/* Category Badge */}
                           <div className="absolute top-3 left-3">
-                            <span className="px-2.5 py-1 rounded-full bg-black/80 text-white text-[10px] font-mono font-bold uppercase tracking-wider backdrop-blur-xs border border-zinc-700">
+                            <span className="px-2.5 py-1 rounded-full bg-black/80 text-white text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-xs border border-zinc-700">
                               {video.badge}
                             </span>
                           </div>
 
                           {/* Duration Pill */}
-                          <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/80 text-white text-[11px] font-mono font-bold backdrop-blur-xs flex items-center gap-1">
-                            <i className="fa-regular fa-clock text-[10px] text-red-400"></i>
+                          <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/80 text-white text-xs font-mono font-bold backdrop-blur-xs flex items-center gap-1">
+                            <i className="fa-regular fa-clock text-xs text-red-400"></i>
                             <span>{video.duration}</span>
                           </div>
 
@@ -263,7 +263,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
                     {/* Video Info Area */}
                     <div className="p-5 sm:p-6 space-y-2.5">
                       <div className="flex items-center justify-between text-xs text-zinc-500 font-mono">
-                        <span className="flex items-center gap-1.5 text-red-600 font-bold text-[11px]">
+                        <span className="flex items-center gap-1.5 text-red-600 font-bold text-xs">
                           <i className="fa-brands fa-youtube"></i>
                           <span>@mobilyaplan</span>
                         </span>
@@ -302,7 +302,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
                         }}
                         className="flex-1 py-2 px-3 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-900 transition-colors flex items-center justify-center gap-1.5 cursor-pointer text-xs"
                       >
-                        <i className="fa-solid fa-expand text-[11px]"></i>
+                        <i className="fa-solid fa-expand text-xs"></i>
                         <span>{isTr ? 'Büyük Ekranda İzle' : 'Watch in Lightbox'}</span>
                       </button>
 

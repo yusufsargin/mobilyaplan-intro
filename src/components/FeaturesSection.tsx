@@ -46,7 +46,7 @@ export const FeaturesSection: React.FC<FeaturesSectionProps> = () => {
                     <i className={`fa-solid ${feature.icon}`}></i>
                   </div>
 
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-700">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-700">
                     {feature.badge}
                   </span>
                 </div>
