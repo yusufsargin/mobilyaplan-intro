@@ -68,7 +68,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
 
           {/* Facebook Live Feed Container / Responsive Iframe & Community Window */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left: Facebook Page Live Embed Box */}
+            {/* Facebook Page Live Embed Box */}
             <div className="lg:col-span-8 rounded-3xl bg-white border border-zinc-200 shadow-md overflow-hidden flex flex-col">
               {/* Facebook Box Top Bar */}
               <div className="px-6 py-4 bg-gradient-to-r from-[#1877F2] to-[#0D65D9] text-white flex items-center justify-between">
@@ -131,63 +131,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
               </div>
             </div>
 
-            {/* Right: Quick Highlights / What Community Shares */}
             <div className="lg:col-span-4 space-y-4">
-              <div className="p-6 rounded-3xl bg-white border border-zinc-200 shadow-xs space-y-4">
-                <div className="flex items-center gap-2.5 text-blue-600 font-bold text-xs uppercase tracking-wider font-mono">
-                  <i className="fa-solid fa-users"></i>
-                  <span>{isTr ? 'Toplulukta Neler Var?' : 'What We Share'}</span>
-                </div>
-
-                <h3 className="text-xl font-bold text-zinc-900 leading-snug">
-                  {isTr
-                    ? 'Atölyenizi Dijitalleştiren Marangozlar ile Birlikte Üretin'
-                    : 'Build Together with Modern Cabinetmakers'}
-                </h3>
-
-                <ul className="space-y-3 text-xs text-zinc-600 font-normal">
-                  <li className="flex items-start gap-2.5">
-                    <i className="fa-solid fa-circle-check text-blue-500 mt-0.5 shrink-0 text-sm"></i>
-                    <span>
-                      <strong>{isTr ? 'Sıfır Hata Kesim Paylaşımları:' : 'Zero-Scrap Cuts:'}</strong>{' '}
-                      {isTr
-                        ? 'MobilyaPlan akıllı nesting ile kesilen plakaların atölye fotoğrafları.'
-                        : 'Real shop photos of optimized nesting cuts using MobilyaPlan.'}
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <i className="fa-solid fa-circle-check text-blue-500 mt-0.5 shrink-0 text-sm"></i>
-                    <span>
-                      <strong>{isTr ? 'Montaj & Karkas İpuçları:' : 'Assembly Tips:'}</strong>{' '}
-                      {isTr
-                        ? 'Minifiks ve kavela koordinatlarıyla hızlı gövde toplama taktikleri.'
-                        : 'Fast carcass assembly tactics with automated dowel drilling.'}
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <i className="fa-solid fa-circle-check text-blue-500 mt-0.5 shrink-0 text-sm"></i>
-                    <span>
-                      <strong>{isTr ? 'Doğrudan Destek & Yardımlaşma:' : 'Direct Master Support:'}</strong>{' '}
-                      {isTr
-                        ? 'Programı kullanan usta ve tasarımcılardan anında öneri ve çözümler.'
-                        : 'Get quick design advice and machining feedback from active users.'}
-                    </span>
-                  </li>
-                </ul>
-
-                <div className="pt-2 border-t border-zinc-100">
-                  <a
-                    href="https://www.facebook.com/MobilyaPlan/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-3 px-4 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#1877F2] font-bold text-xs transition-colors flex items-center justify-center gap-2 border border-blue-200/60"
-                  >
-                    <i className="fa-brands fa-facebook text-sm"></i>
-                    <span>{isTr ? "Facebook'ta Bizi İnceleyin" : 'Explore on Facebook'}</span>
-                  </a>
-                </div>
-              </div>
-
               {/* Fast Trial Card */}
               <div className="p-6 rounded-3xl bg-zinc-900 text-white space-y-3 shadow-md">
                 <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-400/20 text-amber-300 text-[11px] font-mono font-bold">

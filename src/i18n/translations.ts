@@ -1156,7 +1156,7 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
           author: 'MobilyaPlan Tasarım Ekibi',
           authorRole: '3D Görselleştirme & AI Uzmanı',
           excerpt: "Ağır bilgisayarlarla saatlerce render bekleme çilesi bitti. MobilyaPlan ile 3D mutfak çizimini tek tıkla sinematik fotoğrafa çevirip müşteriye anında 'Evet' dedirtin.",
-          imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
+          imageUrl: '/blog/ai-render-kitchen.jpg',
           tags: ['Yapay Zeka', 'AI Render', 'Mutfak Tasarımı', 'Hızlı Satış'],
           content: {
             lead: "Eski usul 3D programlarında bir render almak saatler sürerdi, bazen bilgisayar donar bütün emek çöp olurdu. MobilyaPlan ile Türkiye'de bir ilk olan Yapay Zeka Render özelliği geldi!",
@@ -1193,7 +1193,7 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
           author: 'MobilyaPlan Üretim Ekibi',
           authorRole: 'CNC & Nesting Optimizasyon Uzmanı',
           excerpt: "Her ay fazladan kesilen MDF ve suntalamlar cüzdanınızı yakmasın. MobilyaPlan parçaları plakaya milimetrik yerleştirir, fireyi %20'ye kadar düşürür.",
-          imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80',
+          imageUrl: '/blog/smart-nesting-cnc.jpg',
           tags: ['Akıllı Nesting', 'Sıfır Fire', 'CNC Kesim', 'MDF Tasarrufu'],
           content: {
             lead: "Geleneksel ebatlama programlarında parçaları plakaya oturtmak için usta ayrı bir mesai harcardı. MobilyaPlan'ın Akıllı Nesting motoru bu yükü tamamen üzerinizden alıyor.",
@@ -1230,7 +1230,7 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
           author: 'MobilyaPlan Atölye Destek Ekibi',
           authorRole: 'Marangozluk & Donanım Danışmanı',
           excerpt: "Minifix'ten kavelyaya, çekmece rayından arkalık kanalına... Bütün projenin bağlantı ayarlarını tek hamlede güncelleyin, atölyede montajı hızlandırın.",
-          imageUrl: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80',
+          imageUrl: '/blog/cabinet-joinery.jpg',
           tags: ['Kabin Bağlantıları', 'Minifix & Kavela', 'Otomatik Delik', 'Hızlı Montaj'],
           content: {
             lead: "Proje bittikten sonra müşterinin veya ustanın 'Bağlantıları minifix değil de kavela yapalım' demesi eskiden kabustu; tek tek tüm modüllere girmek gerekirdi. MobilyaPlan'ın yeni özelliğiyle bu dert tamamen tarih oldu!",
@@ -1992,7 +1992,7 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
           author: 'MobilyaPlan Design Team',
           authorRole: '3D Visualization & AI Specialist',
           excerpt: "Stop waiting hours for heavy renders on expensive PCs. Convert your 3D cabinet models into cinematic photorealistic images with one click in MobilyaPlan and get instant client approval.",
-          imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
+          imageUrl: '/blog/ai-render-kitchen.jpg',
           tags: ['AI Render', '3D Presentation', 'Kitchen Design', 'Fast Sales'],
           content: {
             lead: "Traditional 3D software used to take hours to render a single scene, often crashing your PC and wasting all your effort. MobilyaPlan introduces built-in AI Rendering—a breakthrough for furniture designers!",
@@ -2029,7 +2029,7 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
           author: 'MobilyaPlan Production Team',
           authorRole: 'CNC & Nesting Specialist',
           excerpt: 'Don’t burn money on extra MDF and chipboard sheets every month. MobilyaPlan arranges parts with millimeter precision, cutting waste by up to 20%.',
-          imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80',
+          imageUrl: '/blog/smart-nesting-cnc.jpg',
           tags: ['Smart Nesting', 'Zero Waste', 'CNC Machining', 'Material Savings'],
           content: {
             lead: "In traditional nesting programs, operators spent hours manually arranging parts on panels. MobilyaPlan's Smart Nesting engine eliminates this burden completely.",
@@ -2066,7 +2066,7 @@ export const translations: { tr: TranslationKeys; en: TranslationKeys } = {
           author: 'MobilyaPlan Workshop Support',
           authorRole: 'Cabinetry & Hardware Consultant',
           excerpt: 'From minifix to dowels, drawer slides to back panel grooves... Update the entire project’s joinery in a single action and speed up shop assembly.',
-          imageUrl: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80',
+          imageUrl: '/blog/cabinet-joinery.jpg',
           tags: ['Cabinet Joinery', 'Minifix & Dowels', 'Automatic Drilling', 'Fast Assembly'],
           content: {
             lead: "When a customer or shop master asked to switch from minifix to dowels after completing a design, you had to manually edit every module. MobilyaPlan makes this frustration a thing of the past!",
