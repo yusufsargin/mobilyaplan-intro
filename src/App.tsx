@@ -55,7 +55,7 @@ export default function App({ language }: AppProps) {
           onOpenTrialModal={() => setIsTrialModalOpen(true)}
         />
       ) : (
-        <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white font-sans antialiased">
+        <div className="min-h-screen max-w-full overflow-x-clip bg-white text-zinc-900 selection:bg-zinc-900 selection:text-white font-sans antialiased">
           {/* Navigation Bar */}
           <Navbar
             onOpenTrialModal={() => setIsTrialModalOpen(true)}

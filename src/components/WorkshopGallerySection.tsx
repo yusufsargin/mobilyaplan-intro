@@ -33,7 +33,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
           {/* Section Header & Facebook Action Button */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2 border-b border-zinc-200/80">
             <div className="max-w-3xl space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-mono font-bold uppercase tracking-wider">
+              <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-mono font-bold uppercase tracking-wider">
                 <i className="fa-brands fa-facebook text-blue-600 text-sm"></i>
                 <span>{isTr ? 'Facebook Canlı Topluluk Akışı' : 'Live Facebook Community Feed'}</span>
               </div>
@@ -52,16 +52,17 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
             </div>
 
             {/* Direct Facebook Group Action Button */}
-            <div className="shrink-0">
+            <div className="w-full md:w-auto shrink-0">
               <a
                 href="https://www.facebook.com/MobilyaPlan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl bg-[#1877F2] hover:bg-[#166FE5] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer whitespace-nowrap group"
+                className="inline-flex w-full md:w-auto items-center justify-center gap-2 px-4 sm:px-5 py-3 rounded-2xl bg-[#1877F2] hover:bg-[#166FE5] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer group"
               >
-                <i className="fa-brands fa-facebook text-base"></i>
-                <span>{isTr ? 'Facebook Grubumuza Katılın & Paylaşımları Görün ↗' : 'Join Facebook Group & View Posts ↗'}</span>
-                <i className="fa-solid fa-arrow-up-right-from-square text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                <i className="fa-brands fa-facebook text-base shrink-0"></i>
+                <span className="md:hidden">{isTr ? "Facebook'ta İncele" : 'View on Facebook'}</span>
+                <span className="hidden md:inline">{isTr ? 'Facebook Grubumuza Katılın & Paylaşımları Görün ↗' : 'Join Facebook Group & View Posts ↗'}</span>
+                <i className="fa-solid fa-arrow-up-right-from-square text-xs shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
               </a>
             </div>
           </div>
@@ -71,17 +72,17 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
             {/* Facebook Page Live Embed Box */}
             <div className="lg:col-span-8 rounded-3xl bg-white border border-zinc-200 shadow-md overflow-hidden flex flex-col">
               {/* Facebook Box Top Bar */}
-              <div className="px-6 py-4 bg-gradient-to-r from-[#1877F2] to-[#0D65D9] text-white flex items-center justify-between">
-                <div className="flex items-center gap-3">
+              <div className="px-4 sm:px-6 py-4 bg-gradient-to-r from-[#1877F2] to-[#0D65D9] text-white flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center gap-3 min-w-0">
                   <div className="w-10 h-10 rounded-full bg-white text-[#1877F2] flex items-center justify-center font-bold text-xl shadow-xs shrink-0">
                     <i className="fa-brands fa-facebook-f"></i>
                   </div>
-                  <div>
-                    <div className="flex items-center gap-1.5">
-                      <h4 className="font-bold text-sm sm:text-base leading-none">MobilyaPlan Topluluğu</h4>
-                      <i className="fa-solid fa-circle-check text-white text-xs" title="Resmi Sayfa"></i>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <h4 className="font-bold text-sm sm:text-base leading-none truncate">MobilyaPlan Topluluğu</h4>
+                      <i className="fa-solid fa-circle-check text-white text-xs shrink-0" title="Resmi Sayfa"></i>
                     </div>
-                    <p className="text-xs text-blue-100 font-mono mt-0.5">@MobilyaPlan • Canlı Atölye & İmalat Akışı</p>
+                    <p className="text-xs text-blue-100 font-mono mt-0.5 break-words">@MobilyaPlan • Canlı Atölye & İmalat Akışı</p>
                   </div>
                 </div>
 
@@ -89,7 +90,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
                   href="https://www.facebook.com/MobilyaPlan/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3.5 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white text-xs font-bold transition-colors flex items-center gap-1.5 backdrop-blur-xs"
+                  className="self-start sm:self-auto shrink-0 px-3.5 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white text-xs font-bold transition-colors inline-flex items-center gap-1.5 backdrop-blur-xs"
                 >
                   <span>{isTr ? 'Takip Et' : 'Follow'}</span>
                   <i className="fa-solid fa-plus text-xs"></i>
@@ -97,17 +98,17 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
               </div>
 
               {/* Responsive Facebook Page Plugin / Iframe Feed Container */}
-              <div className="relative w-full bg-zinc-100 min-h-[500px] sm:min-h-[560px] overflow-hidden flex flex-col items-center justify-center p-2 sm:p-4">
+              <div className="relative w-full bg-zinc-100 overflow-hidden">
                 <iframe
-                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMobilyaPlan%2F&tabs=timeline&width=500&height=560&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMobilyaPlan%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                   width="100%"
-                  height="560"
-                  style={{ border: 'none', overflow: 'hidden', maxWidth: '500px' }}
+                  height="500"
+                  style={{ border: 'none', overflow: 'hidden', width: '100%' }}
                   scrolling="no"
                   frameBorder="0"
                   allowFullScreen={true}
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  className="rounded-2xl shadow-xs bg-white w-full max-w-[500px]"
+                  className="block w-full max-w-full bg-white"
                   title="MobilyaPlan Facebook Live Feed"
                 ></iframe>
               </div>
@@ -124,9 +125,10 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
                   href="https://www.facebook.com/MobilyaPlan/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#1877F2] hover:bg-[#166FE5] text-white font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-2 whitespace-nowrap"
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#1877F2] hover:bg-[#166FE5] text-white font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-2"
                 >
-                  <span>{isTr ? 'Facebook Grubumuza Katılın & Paylaşımları Görün ↗' : 'Join Facebook Group & View Posts ↗'}</span>
+                  <span className="sm:hidden">{isTr ? "Facebook'ta İncele" : 'View on Facebook'}</span>
+                  <span className="hidden sm:inline">{isTr ? 'Facebook Grubumuza Katılın & Paylaşımları Görün ↗' : 'Join Facebook Group & View Posts ↗'}</span>
                 </a>
               </div>
             </div>
@@ -171,7 +173,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
           {/* YouTube Section Header & Button */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
             <div className="max-w-3xl space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-mono font-bold uppercase tracking-wider">
+              <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-red-50 border border-red-200 text-red-700 text-xs font-mono font-bold uppercase tracking-wider">
                 <i className="fa-brands fa-youtube text-red-600 text-sm"></i>
                 <span>{gallery.youtubeBadge}</span>
               </div>
@@ -186,16 +188,17 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
             </div>
 
             {/* Direct YouTube Channel Button */}
-            <div className="shrink-0">
+            <div className="w-full md:w-auto shrink-0">
               <a
                 href={gallery.youtubeButtonUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl bg-[#FF0000] hover:bg-[#E60000] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer whitespace-nowrap group"
+                className="inline-flex w-full md:w-auto items-center justify-center gap-2 px-4 sm:px-5 py-3 rounded-2xl bg-[#FF0000] hover:bg-[#E60000] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer group"
               >
-                <i className="fa-brands fa-youtube text-base"></i>
-                <span>{gallery.youtubeButtonText}</span>
-                <i className="fa-solid fa-arrow-up-right-from-square text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                <i className="fa-brands fa-youtube text-base shrink-0"></i>
+                <span className="md:hidden">{isTr ? "YouTube'da İzle" : 'Watch on YouTube'}</span>
+                <span className="hidden md:inline">{gallery.youtubeButtonText}</span>
+                <i className="fa-solid fa-arrow-up-right-from-square text-xs shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
               </a>
             </div>
           </div>
@@ -262,12 +265,12 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
 
                     {/* Video Info Area */}
                     <div className="p-5 sm:p-6 space-y-2.5">
-                      <div className="flex items-center justify-between text-xs text-zinc-500 font-mono">
-                        <span className="flex items-center gap-1.5 text-red-600 font-bold text-xs">
-                          <i className="fa-brands fa-youtube"></i>
+                      <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-xs text-zinc-500 font-mono">
+                        <span className="flex items-center gap-1.5 text-red-600 font-bold text-xs min-w-0">
+                          <i className="fa-brands fa-youtube shrink-0"></i>
                           <span>@mobilyaplan</span>
                         </span>
-                        <span>{video.views}</span>
+                        <span className="shrink-0">{video.views}</span>
                       </div>
 
                       <h4
@@ -291,7 +294,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
 
                   {/* Bottom Card Actions: Play in Modal or Direct Watch on YouTube */}
                   <div className="p-5 sm:p-6 pt-0 space-y-2.5">
-                    <div className="pt-3 border-t border-zinc-100 flex items-center justify-between text-xs font-bold gap-2">
+                    <div className="pt-3 border-t border-zinc-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-between text-xs font-bold gap-2">
                       <button
                         onClick={() => {
                           setActiveVideoModal({
@@ -310,7 +313,7 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
                         href={video.videoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="py-2 px-3 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 transition-colors flex items-center justify-center gap-1.5 text-xs whitespace-nowrap"
+                        className="py-2 px-3 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 transition-colors flex items-center justify-center gap-1.5 text-xs"
                       >
                         <i className="fa-brands fa-youtube text-xs"></i>
                         <span>{isTr ? "YouTube'da İzle ↗" : 'Watch on YouTube ↗'}</span>
@@ -325,8 +328,8 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
           {/* Social Proof Global Conversion Banner */}
           <div className="mt-8 rounded-3xl bg-zinc-900 text-white p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
             <div className="space-y-1.5 text-center sm:text-left">
-              <h4 className="text-base sm:text-lg font-black text-white flex items-center justify-center sm:justify-start gap-2">
-                <i className="fa-solid fa-industry text-amber-400"></i>
+              <h4 className="text-base sm:text-lg font-black text-white flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <i className="fa-solid fa-industry text-amber-400 shrink-0"></i>
                 <span>{isTr ? 'Atölyenizde de Aynı Hız ve Sıfır Fireyi Yakalayın' : 'Achieve the Same Speed & Zero Waste in Your Shop'}</span>
               </h4>
               <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl font-normal">
@@ -336,12 +339,12 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
               </p>
             </div>
 
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
               <a
                 href={brandUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer whitespace-nowrap"
+                className="px-4 sm:px-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>{gallery.ctaText}</span>
                 <i className="fa-solid fa-arrow-right text-xs"></i>

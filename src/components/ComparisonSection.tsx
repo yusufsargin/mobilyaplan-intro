@@ -18,7 +18,7 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-800 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-800 text-xs font-mono font-bold uppercase tracking-wider">
             <i className="fa-solid fa-code-compare text-zinc-700"></i>
             <span>{comp.badge}</span>
           </div>
@@ -84,9 +84,9 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = () => {
               <span>{comp.colTraditional}</span>
             </div>
 
-            <div className="md:col-span-5 p-4 sm:p-5 flex items-center justify-between border-t md:border-t-0 md:border-l border-zinc-200 bg-zinc-200/50 text-zinc-900">
-              <div className="flex items-center gap-2">
-                <i className="fa-solid fa-bolt-lightning text-amber-600"></i>
+            <div className="md:col-span-5 p-4 sm:p-5 flex flex-wrap items-center justify-between gap-2 border-t md:border-t-0 md:border-l border-zinc-200 bg-zinc-200/50 text-zinc-900">
+              <div className="flex items-center gap-2 min-w-0">
+                <i className="fa-solid fa-bolt-lightning text-amber-600 shrink-0"></i>
                 <span className="font-extrabold">{comp.colBrand}</span>
               </div>
               <span className="text-xs font-mono bg-zinc-900 text-white px-2 py-0.5 rounded font-black tracking-widest">
@@ -142,7 +142,7 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = () => {
               href={brandUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer whitespace-nowrap"
+              className="px-6 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
             >
               <span>{t.common.startTrialBtn}</span>
               <i className="fa-solid fa-arrow-right text-xs"></i>

@@ -36,7 +36,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-800 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 border border-zinc-300 text-zinc-800 text-xs font-mono font-bold uppercase tracking-wider">
             <i className="fa-solid fa-newspaper text-zinc-700"></i>
             <span>{blog.badge}</span>
           </div>
@@ -132,7 +132,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
         {/* Blog Bottom CTA Box */}
         <div className="mt-16 rounded-3xl bg-zinc-50 border border-zinc-200 p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-2 text-center sm:text-left">
-            <h3 className="text-xl font-black text-zinc-900 flex items-center justify-center sm:justify-start gap-2">
+            <h3 className="text-xl font-black text-zinc-900 flex flex-wrap items-center justify-center sm:justify-start gap-2">
               <i className="fa-solid fa-lightbulb text-amber-500"></i>
               <span>{isTr ? 'Atölyenizde Bu Yöntemleri Uygulamaya Başlayın' : 'Start Applying These Strategies in Your Shop'}</span>
             </h3>
@@ -143,11 +143,11 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 w-full sm:w-auto">
             {onOpenBlogPortal && (
               <button
                 onClick={onOpenBlogPortal}
-                className="px-5 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer whitespace-nowrap"
+                className="px-5 py-3.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
                 <i className="fa-solid fa-book-open text-xs"></i>
                 <span>{blog.allArticlesTitle}</span>
@@ -158,7 +158,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
               href={brandUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer whitespace-nowrap"
+              className="px-5 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>{t.common.startTrialBtn}</span>
               <i className="fa-solid fa-arrow-right text-xs"></i>
@@ -167,7 +167,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             {onOpenTrialModal && (
               <button
                 onClick={onOpenTrialModal}
-                className="px-4 py-3.5 rounded-xl bg-white hover:bg-zinc-100 text-zinc-900 font-bold text-xs sm:text-sm border border-zinc-300 shadow-xs transition-colors cursor-pointer whitespace-nowrap"
+                className="px-4 py-3.5 rounded-xl bg-white hover:bg-zinc-100 text-zinc-900 font-bold text-xs sm:text-sm border border-zinc-300 shadow-xs transition-colors cursor-pointer"
               >
                 {isTr ? '3 Gün Ücretsiz' : '3 Days Free'}
               </button>

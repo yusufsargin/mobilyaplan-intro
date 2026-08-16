@@ -28,7 +28,7 @@ export const FloatingActionBar: React.FC = () => {
   return (
     <>
       {/* Floating Speed-Dial Container (Bottom Right) */}
-      <div className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 flex flex-col items-end gap-3 pointer-events-auto">
+      <div className="hidden sm:flex fixed bottom-6 right-6 z-40 flex-col items-end gap-3 pointer-events-auto">
         
         {/* Floating WhatsApp Live Help Widget */}
         <div className="group relative flex items-center">
@@ -70,7 +70,7 @@ export const FloatingActionBar: React.FC = () => {
 
       {/* Sticky Bottom Floating Bar for Mobile / High Conversion */}
       {!isDismissed && (
-        <div className="fixed bottom-0 left-0 right-0 z-30 sm:hidden bg-black/95 backdrop-blur-md border-t border-zinc-800 p-3 shadow-2xl flex items-center justify-between gap-2.5">
+        <div className="fixed bottom-0 inset-x-0 z-30 sm:hidden w-full bg-black/95 backdrop-blur-md border-t border-zinc-800 p-3 shadow-2xl flex items-center justify-between gap-2">
           <div className="flex-1">
             <a
               href={brandUrl}

@@ -8,10 +8,17 @@
 }
 
 @layer base {
+  html, body {
+    overflow-x: clip;
+    max-width: 100%;
+  }
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     background-color: #ffffff;
     color: #18181b;
+  }
+  img, video, iframe, canvas, svg {
+    max-width: 100%;
   }
   code, pre, .font-mono {
     font-family: 'JetBrains Mono', monospace;

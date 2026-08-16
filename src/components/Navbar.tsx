@@ -55,27 +55,27 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-40 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200/90 py-3 shadow-md'
-            : 'bg-white/80 backdrop-blur-sm border-b border-zinc-200/60 py-4'
+            ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200/90 py-2.5 sm:py-3 shadow-md'
+            : 'bg-white/80 backdrop-blur-sm border-b border-zinc-200/60 py-3 sm:py-4'}
         }`}
       >
-        <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4 xl:gap-6">
+        <div className="max-w-[90rem] mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-2 sm:gap-4 xl:gap-6 min-w-0">
             {/* Dynamic Brand Logo */}
-            <a href={brandUrl} className="flex items-center gap-3 group shrink-0">
-              <MobilyaPlanLogo className="w-10 h-10 group-hover:scale-105 transition-transform duration-200" />
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-xl font-extrabold tracking-tight text-zinc-900">
+            <a href={brandUrl} className="flex items-center gap-2 sm:gap-3 group min-w-0 shrink">
+              <MobilyaPlanLogo className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 group-hover:scale-105 transition-transform duration-200" />
+              <div className="min-w-0">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <span className="text-base sm:text-xl font-extrabold tracking-tight text-zinc-900 truncate">
                     {isTr ? (
                       <>Mobilya<span className="text-zinc-500">Plan</span></>
                     ) : (
                       <>Furniture<span className="text-zinc-500">Draw</span></>
                     )}
                   </span>
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-300">
+                  <span className="hidden sm:inline-flex text-[11px] font-mono font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-300 shrink-0">
                     WEB CAD
                   </span>
                 </div>
@@ -99,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </nav>
 
             {/* Right Side Controls */}
-            <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
               {/* Language Switcher Button (TR / EN) */}
               <LanguageToggle variant="compact" />
 
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {/* Hamburger Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(true)}
-                className="flex xl:hidden items-center gap-2 px-3.5 py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-bold transition-all shadow-xs cursor-pointer border border-zinc-300"
+                className="flex xl:hidden items-center justify-center gap-2 w-10 h-10 sm:w-auto sm:h-auto sm:px-3.5 sm:py-2 rounded-xl bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-bold transition-all shadow-xs cursor-pointer border border-zinc-300"
                 aria-label={t.common.menu}
               >
                 <i className="fa-solid fa-bars text-sm text-zinc-800"></i>
@@ -138,7 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Slide Drawer Content */}
           <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-            <div className="w-screen max-w-md bg-white text-zinc-900 shadow-2xl border-l border-zinc-200 flex flex-col justify-between overflow-y-auto">
+            <div className="w-full max-w-md bg-white text-zinc-900 shadow-2xl border-l border-zinc-200 flex flex-col justify-between overflow-y-auto">
               
               {/* Drawer Header */}
               <div className="p-6 border-b border-zinc-200 flex items-center justify-between bg-zinc-50">

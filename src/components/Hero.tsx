@@ -12,12 +12,12 @@ export const Hero: React.FC<HeroProps> = () => {
   const brandUrl = getProductUrl(language);
 
   return (
-    <section className="relative pt-32 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-white text-zinc-900 border-b border-zinc-200">
+    <section className="relative pt-24 pb-24 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-white text-zinc-900 border-b border-zinc-200">
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
         {/* 1. Status Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-100 border border-zinc-300/80 text-zinc-800 text-xs font-mono font-bold tracking-wide shadow-xs mb-6">
+        <div className="inline-flex max-w-full flex-wrap items-center justify-center gap-2.5 px-3 sm:px-4 py-1.5 rounded-full bg-zinc-100 border border-zinc-300/80 text-zinc-800 text-xs font-mono font-bold tracking-wide shadow-xs mb-4 sm:mb-6">
           <span className="flex h-2 w-2 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = () => {
         </p>
 
         {/* 4. Single Prominent CTA Button & Trust Note */}
-        <div className="mt-8 flex flex-col items-center justify-center gap-3">
+        <div className="mt-6 sm:mt-8 flex flex-col items-center justify-center gap-3 pb-16 sm:pb-0">
           <a
             href={brandUrl}
             target="_blank"
@@ -48,13 +48,13 @@ export const Hero: React.FC<HeroProps> = () => {
             <i className="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
           </a>
 
-          <p className="text-xs text-zinc-500 font-mono flex items-center gap-2 mt-1">
-            <i className="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
-            <span>{t.hero.trustNote}</span>
+          <p className="text-xs text-zinc-500 font-mono text-center px-2 mt-1 leading-relaxed">
+            <i className="fa-solid fa-circle-check text-emerald-600 text-xs mr-1.5"></i>
+            {t.hero.trustNote}
           </p>
-          <p className="text-xs sm:text-sm text-zinc-700 font-semibold flex items-center gap-2">
-            <i className="fa-solid fa-users text-zinc-500 text-[12px]"></i>
-            <span>{t.hero.userCount}</span>
+          <p className="text-xs sm:text-sm text-zinc-700 font-semibold text-center px-2">
+            <i className="fa-solid fa-users text-zinc-500 text-[12px] mr-1.5"></i>
+            {t.hero.userCount}
           </p>
         </div>
 
