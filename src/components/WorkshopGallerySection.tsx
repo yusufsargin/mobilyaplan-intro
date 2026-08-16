@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { getProductUrl } from '../config/urls';
+
+const FB_PAGE_URL = 'https://www.facebook.com/MobilyaPlan/';
+const FB_PLUGIN_MIN_WIDTH = 180;
+const FB_PLUGIN_MAX_WIDTH = 500;
+const FB_PLUGIN_HEIGHT = 500;
 
 interface WorkshopGallerySectionProps {
   onOpenTrialModal?: () => void;
@@ -21,6 +26,32 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
 
   // Selected state for Inline Video Player
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
+
+  // Facebook Page Plugin maxes out at 500px. Measure the card, request the
+  // widest allowed plugin, then scale it so posts fill the container.
+  const fbContainerRef = useRef<HTMLDivElement>(null);
+  const [fbPluginWidth, setFbPluginWidth] = useState(FB_PLUGIN_MAX_WIDTH);
+  const [fbScale, setFbScale] = useState(1);
+
+  useEffect(() => {
+    const el = fbContainerRef.current;
+    if (!el) return;
+
+    const updateWidth = () => {
+      const containerWidth = Math.round(el.clientWidth);
+      if (!containerWidth) return;
+      const pluginWidth = Math.min(FB_PLUGIN_MAX_WIDTH, Math.max(FB_PLUGIN_MIN_WIDTH, containerWidth));
+      setFbPluginWidth(pluginWidth);
+      setFbScale(containerWidth / pluginWidth);
+    };
+
+    updateWidth();
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const fbEmbedSrc = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FB_PAGE_URL)}&tabs=timeline&width=${fbPluginWidth}&height=${FB_PLUGIN_HEIGHT}&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true`;
 
   return (
     <section id="galeri" className="py-20 lg:py-28 bg-zinc-50/70 text-zinc-900 border-t border-zinc-200">
@@ -98,17 +129,29 @@ export const WorkshopGallerySection: React.FC<WorkshopGallerySectionProps> = ({ 
               </div>
 
               {/* Responsive Facebook Page Plugin / Iframe Feed Container */}
-              <div className="relative w-full bg-zinc-100 overflow-hidden">
+              <div
+                ref={fbContainerRef}
+                className="relative w-full bg-white overflow-hidden"
+                style={{ height: FB_PLUGIN_HEIGHT * fbScale }}
+              >
                 <iframe
-                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMobilyaPlan%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                  width="100%"
-                  height="500"
-                  style={{ border: 'none', overflow: 'hidden', width: '100%' }}
+                  key={fbPluginWidth}
+                  src={fbEmbedSrc}
+                  width={fbPluginWidth}
+                  height={FB_PLUGIN_HEIGHT}
+                  style={{
+                    border: 'none',
+                    overflow: 'hidden',
+                    width: fbPluginWidth,
+                    height: FB_PLUGIN_HEIGHT,
+                    transform: `scale(${fbScale})`,
+                    transformOrigin: 'top left',
+                  }}
                   scrolling="no"
                   frameBorder="0"
                   allowFullScreen={true}
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  className="block w-full max-w-full bg-white"
+                  className="block bg-white"
                   title="MobilyaPlan Facebook Live Feed"
                 ></iframe>
               </div>
