@@ -54,9 +54,9 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
             <div className="space-y-6">
               {/* Plan Header */}
               <div className="space-y-2 border-b border-zinc-100 pb-5">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <h3 className="text-2xl font-black text-zinc-900">{standardPlan.name}</h3>
-                  <span className="text-xs font-mono text-zinc-700 uppercase bg-zinc-100 px-2.5 py-1 rounded-lg border border-zinc-200">
+                  <span className="text-xs font-mono text-zinc-700 uppercase bg-zinc-100 px-2.5 py-1 rounded-lg border border-zinc-200 whitespace-nowrap">
                     CAD & Render
                   </span>
                 </div>
@@ -75,8 +75,8 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
                     {t.pricing.periodAnnual}
                   </span>
                 </div>
-                <p className="text-xs font-mono text-emerald-700 font-bold flex items-center gap-1">
-                  <i className="fa-solid fa-circle-check text-xs"></i>
+                <p className="text-xs font-mono text-emerald-700 font-bold flex items-start gap-1.5">
+                  <i className="fa-solid fa-circle-check text-xs mt-0.5 shrink-0"></i>
                   <span>{isTr ? 'Yıllık Sürüm • 365 Gün Kesintisiz Erişim' : 'Annual Edition • 365 Days Full Access'}</span>
                 </p>
               </div>
@@ -113,20 +113,22 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
           </div>
 
           {/* Card 2: CNC Plan (Popular) */}
-          <div className="rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative shadow-xl bg-zinc-900 text-white border-2 border-zinc-900 md:-translate-y-2">
+          <div className="rounded-3xl p-6 sm:p-8 pt-8 sm:pt-8 flex flex-col justify-between transition-all duration-300 relative shadow-xl bg-zinc-900 text-white border-2 border-zinc-900 md:-translate-y-2">
             
-            {/* Most Popular Badge */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-amber-400 text-zinc-950 text-xs font-mono font-black shadow-md tracking-wider uppercase flex items-center gap-1.5">
-              <i className="fa-solid fa-star text-xs"></i>
-              <span>{t.pricing.popularBadge}</span>
+            {/* Most Popular Badge — full-width overlay so the pill can size to its text */}
+            <div className="absolute -top-3.5 inset-x-0 flex justify-center px-3 pointer-events-none">
+              <div className="inline-flex max-w-full items-center gap-1.5 px-3 sm:px-4 py-1 rounded-full bg-amber-400 text-zinc-950 text-[11px] sm:text-xs font-mono font-black shadow-md tracking-wide sm:tracking-wider uppercase pointer-events-auto">
+                <i className="fa-solid fa-star text-[10px] sm:text-xs shrink-0"></i>
+                <span className="whitespace-nowrap">{t.pricing.popularBadge}</span>
+              </div>
             </div>
 
             <div className="space-y-6">
               {/* Plan Header */}
               <div className="space-y-2 border-b border-zinc-800 pb-5">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <h3 className="text-2xl font-black text-white">{cncPlan.name}</h3>
-                  <span className="text-xs font-mono text-zinc-950 font-bold uppercase bg-white px-2.5 py-1 rounded-lg">
+                  <span className="text-xs font-mono text-zinc-950 font-bold uppercase bg-white px-2.5 py-1 rounded-lg whitespace-nowrap">
                     FULL CAM & CNC
                   </span>
                 </div>
@@ -145,8 +147,8 @@ export const PricingSection: React.FC<PricingSectionProps> = () => {
                     {t.pricing.periodAnnual}
                   </span>
                 </div>
-                <p className="text-xs font-mono text-amber-400 font-bold flex items-center gap-1">
-                  <i className="fa-solid fa-bolt text-xs"></i>
+                <p className="text-xs font-mono text-amber-400 font-bold flex items-start gap-1.5">
+                  <i className="fa-solid fa-bolt text-xs mt-0.5 shrink-0"></i>
                   <span>{isTr ? 'Yıllık Sürüm • Tüm CNC Post İşlemcileri Dahil' : 'Annual Edition • All CNC Post Processors Included'}</span>
                 </p>
               </div>
